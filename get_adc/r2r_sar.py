@@ -7,11 +7,11 @@ adc_p = r2r.R2R_ADC(3.294, comp_time = 0.0001, verbose = True)
 
 volt_lst = []
 time_lst = []
-duration = 3.0
+duration = 4.0
 try:
     time_0 = datetime.now()
     while (datetime.now() - time_0).total_seconds() <= duration:
-        volt_lst.append(adc_p.get_sc_volt())
+        volt_lst.append(adc_p.get_sar_volt())
         time_lst.append((datetime.now() - time_0).total_seconds())
     a_plt.plot_volt_of_time(time_lst, volt_lst, adc_p.dyn_rg)
     a_plt.plot_sampl_T_hist(time_lst)
